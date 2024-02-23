@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QnA Bot Dashboard</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Homepage</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
+      href="..\static\styles.css"
     />
-  </head>
-  <body>
-    <div id="chat-container">
-      <div id="chat-history">
-        <!-- Display chat history here -->
-        {% for panel in panels %} {{ panel }} {% endfor %}
-      </div>
-
-      <div id="user-input">
-        <input
-          type="text"
-          name="query"
-          id="query"
-          placeholder="Type your message..."
-        />
-        <button id="submit-btn" onclick="submitQuery()">Send</button>
-      </div>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">History</a></li> <!-- Corrected closing tag -->
+            </ul>
+        </nav>
     </div>
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-  </body>
+    <div class="main-content">
+        <h1>Welcome, We're here to help you</h1>
+        <p>Type your question and we'll answer it</p>
+        <!-- Added enctype attribute to allow file uploads -->
+        <form id="chatForm" enctype="multipart/form-data">
+            <div class="input-group">
+                <input type="text" name="userMessage" placeholder="Type your message here..." required>
+                <button type="submit">Send</button>
+            </div>
+            <div class="input-group">
+                <label for="fileUpload">Upload an image (optional):</label>
+                <input type="file" id="fileUpload" style = "display: none;" name="imageFile">
+            </div>
+          
+        </form>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
 </html>

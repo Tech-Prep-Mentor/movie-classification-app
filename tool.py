@@ -6,10 +6,13 @@ import wikipedia
 import requests
 import os
 
+
 # Define the input schema
 class OpenMeteoInput(BaseModel):
-    latitude: float = Field(..., description="Latitude of the location to fetch weather data for")
-    longitude: float = Field(..., description="Longitude of the location to fetch weather data for")
+    latitude: float = Field(0.0, description="Latitude of the location to fetch weather data for")
+    longitude: float = Field(0.0, description="Longitude of the location to fetch weather data for")
+
+print(issubclass(OpenMeteoInput, BaseModel))
 
 @tool(args_schema=OpenMeteoInput)
 def get_current_temperature(latitude: float, longitude: float) -> dict:
@@ -45,7 +48,7 @@ def get_current_temperature(latitude: float, longitude: float) -> dict:
 
 
 @tool
-def search_wikipedia(query: str) -> str:
+def search_wikipedia(self, query: str) -> str:
     """Run Wikipedia search and get page summaries."""
     page_titles = wikipedia.search(query)
     summaries = []
@@ -68,9 +71,9 @@ def search_wikipedia(query: str) -> str:
 
 #This example converts 100 US Dollars (USD) to Euros (EUR). The result will be printed to the console.
 class CurrencyConversionInput(BaseModel):
-    amount: float = Field(..., description="Amount to convert")
-    from_currency: str = Field(..., description="Currency code to convert from")
-    to_currency: str = Field(..., description="Currency code to convert to")
+    amount: float = Field(0.0, description="Amount to convert")
+    from_currency: str = Field(0.0, description="Currency code to convert from")
+    to_currency: str = Field(0.0, description="Currency code to convert to")
 
 @tool(args_schema=CurrencyConversionInput)
 def currency_conversion(amount, from_currency, to_currency) -> str:
@@ -104,9 +107,9 @@ def currency_conversion(amount, from_currency, to_currency) -> str:
 
 #This example converts 1 Bitcoin (BTC) to Ethereum (ETH).
 class CryptoConversionInput(BaseModel):
-    amount: float = Field(..., description="Amount to convert")
-    from_currency: str = Field(..., description="Cryptocurrency symbol to convert from (e.g., BTC)")
-    to_currency: str = Field(..., description="Cryptocurrency symbol to convert to (e.g., ETH)")
+    amount: float = Field(0.0, description="Amount to convert")
+    from_currency: str = Field(0.0, description="Cryptocurrency symbol to convert from (e.g., BTC)")
+    to_currency: str = Field(0.0, description="Cryptocurrency symbol to convert to (e.g., ETH)")
 @tool(args_schema=CryptoConversionInput)
 def crypto_conversion(amount, from_currency, to_currency) -> str:
     """Convert cryptocurrency based on the provided input using CoinGecko API."""
@@ -144,8 +147,8 @@ from datetime import datetime
 from pydantic import BaseModel, Field
 
 class TimeZoneConversionInput(BaseModel):
-    from_timezone: str = Field(..., description="Source time zone")
-    to_timezone: str = Field(..., description="Target time zone")
+    from_timezone: str = Field(0.0, description="Source time zone")
+    to_timezone: str = Field(0.0, description="Target time zone")
 
 @tool(args_schema=TimeZoneConversionInput)
 def current_time_zone_conversion(from_timezone, to_timezone) -> str:
@@ -172,9 +175,9 @@ def current_time_zone_conversion(from_timezone, to_timezone) -> str:
 
 
 class TranslationInput(BaseModel):
-    text: str = Field(..., description="Text to translate")
-    source_language: str = Field(..., description="Source language code (e.g., en for English)")
-    target_language: str = Field(..., description="Target language code")
+    text: str = Field(0.0, description="Text to translate")
+    source_language: str = Field(0.0, description="Source language code (e.g., en for English)")
+    target_language: str = Field(0.0, description="Target language code")
 @tool(args_schema=TranslationInput)
 def language_translation(text, source_language, target_language) -> str:
     """Translate text based on the provided input using Google Cloud Translation API."""
@@ -214,9 +217,9 @@ from pydantic import BaseModel, Field
 ureg = UnitRegistry()
 
 class UnitConversionInput(BaseModel):
-    value: float = Field(..., description="Value to convert")
-    from_unit: str = Field(..., description="Source unit")
-    to_unit: str = Field(..., description="Target unit")
+    value: float = Field(0.0, description="Value to convert")
+    from_unit: str = Field(0.0, description="Source unit")
+    to_unit: str = Field(0.0, description="Target unit")
 @tool(args_schema=UnitConversionInput)
 def unit_conversion(value, from_unit, to_unit) -> str:
     """Convert units based on the provided input using the pint library."""
@@ -238,7 +241,7 @@ def unit_conversion(value, from_unit, to_unit) -> str:
 
 
 class StockInfoInput(BaseModel):
-    symbol: str = Field(..., description="Stock symbol (e.g., AAPL)")
+    symbol: str = Field(0.0, description="Stock symbol (e.g., AAPL)")
 @tool(args_schema=StockInfoInput)
 def get_stock_info(symbol) -> str:
     """Fetch stock information based on the provided input using Alpha Vantage API."""
@@ -291,8 +294,8 @@ from io import StringIO
 from pydantic import BaseModel, Field
 
 class StockVisualizationInput(BaseModel):
-    symbol: str = Field(..., description="Stock symbol (e.g., AAPL)")
-    api_key: str = Field(..., description="Alpha Vantage API key")
+    symbol: str = Field(0.0, description="Stock symbol (e.g., AAPL)")
+    api_key: str = Field(0.0, description="Alpha Vantage API key")
 @tool(args_schema=StockVisualizationInput)
 def visualize_stock(symbol,api_key) -> str:
     """Visualize historical stock data based on the provided input using Alpha Vantage API."""
@@ -350,8 +353,8 @@ from pydantic import BaseModel, Field
 from datetime import datetime
 
 class WeatherForecastInput(BaseModel):
-    city: str = Field(..., description="City name")
-    country: str = Field(..., description="Country code")
+    city: str = Field(0.0, description="City name")
+    country: str = Field(0.0, description="Country code")
 
 @tool(args_schema=WeatherForecastInput)
 def weather_forecast(city,country) -> str:

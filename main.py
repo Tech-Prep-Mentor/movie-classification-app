@@ -66,7 +66,7 @@ panel_server = pn.serve(dashboard, show=False,port=0)
 def index():
     # Get the Bokeh script
     bokeh_script=server_document(url='http://localhost:{}'.format(panel_server.port), relative_urls=True)
-    return render_template('index.html', bokeh_script=bokeh_script)
+    return render_template('login.html', bokeh_script=bokeh_script)
 
 if __name__ == '__main__':
     # Start the Flask app

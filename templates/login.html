@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #FFC0CB; /* Simple pink background */
+            background: linear-gradient(135deg, #FFC0CB 30%, #FF69B4 100%); /* Gradient for a vibrant effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.4); /* Lighter overlay */
+        }
+        .login-form {
+            position: relative;
+            z-index: 2;
+            background: #fff0f5; /* A lighter pink shade for the form background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); /* Soft pink shadow */
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        .form-control {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-control input {
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #f8f8f8;
+            transition: background-color 0.3s ease;
+        }
+        .form-control input {
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #FFC0CB; /* Light pink border */
+            font-size: 16px;
+            background-color: #FFF5F5; /* Very light pink background */
+            transition: all 0.3s ease;
+        }
+        .form-control label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="submit"] {
+            background-color: #FF69B4; /* Hot pink for the button */
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #username, #password{
+            position: relative;
+            right: 17px
+        }
+    </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+<div class="login-form">
+    <h2 style="text-align: center; color: #333; margin-bottom: 30px;">Login</h2>
+    <form id="loginForm">
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-control">
+            <input type="submit" value="Login" id = "loginForm">
+        </div>
+    </form>
+</div>
+
+<script src="src.js"></script>
+
+
+</body>
+</html>
