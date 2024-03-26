@@ -3,13 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { AuthProvider } from './AuthContext/AuthContext';
 
+
+//react query  It simplifies and optimizes data management by providing tools for fetching, caching, synchronizing, and updating data in your React components. 
+const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+    <AuthProvider>
+        <App/>
+    </AuthProvider>
+        <ReactQueryDevtools initialIsOpen={false}/>
+    </QueryClientProvider>
   </React.StrictMode>
 );
+
+//React Router DOM is a popular library for handling routing in React applications.
+//queries: fetching something from the server
+//Mutations: sending something to the server
+//dev tools" refer to the browser extension or standalone tool provided by React Query to assist developers in debugging and monitoring the behavior of React Query
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
