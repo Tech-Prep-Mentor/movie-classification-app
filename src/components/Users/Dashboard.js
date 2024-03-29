@@ -48,12 +48,12 @@ const Dashboard = () => {
 
         {/* Credit Usage Section */}
         <div className="mb-6 bg-white p-4 shadow rounded-lg">
-          <h2 className="text-xl font-semibold mb-4">Credit Usage</h2>
+          <h2 className="text-xl font-semibold mb-4">MOVIES SUMMARY</h2>
           <div>
-            <p className="mb-4">Monthly Credit:{data?.user?.monthlyRequestCount}</p>
-            <p className="mb-4">Credit Used: {data?.user?.apiRequestCount}</p>
-            <p className="mb-4">Credit Remaining: {data?.user?.monthlyRequestCount - data?.user?.apiRequestCount}</p>
-            <p className="mb-4">Next Billing Date: {new Date(data?.user?.nextBillingDate).toLocaleDateString()}</p>
+            <p className="mb-4">Films watched:</p>
+            <p className="mb-4">Preference type: </p>
+            <p className="mb-4">Active days: </p>
+            <p className="mb-4">More:</p>
           </div>
         </div>
 
@@ -61,22 +61,22 @@ const Dashboard = () => {
         <div className="mb-6 bg-white p-4 shadow rounded-lg">
           <h2 className="text-xl font-semibold mb-4">Payment & Plans</h2>
           <div>
-            <p className="mb-4">Current Plan: {data?.user?.subscriptionPlan}</p>
+            <p className="mb-4">Movie watched recently:</p>
             <Link
               to="/plans"
               className=" py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Upgrade Plan
+              More
             </Link>
           </div>
         </div>
 
         {/* Trial Information Section */}
         <div className="mb-6 bg-white p-4 shadow rounded-lg">
-          <h2 className="text-xl font-semibold mb-4">Trial Information</h2>
+          <h2 className="text-xl font-semibold mb-4">Summary</h2>
           <div>
-            <p className="mb-4">Trial Status: {data?.user?.trialActive?.toString()}</p>
-            <p className="mb-4">Expires on: {new Date(data?.user?.trialExpires).toLocaleDateString()} </p>
+            <p className="mb-4">K Drama</p>
+            <p className="mb-4">More</p>
             <Link
               to="/plans"
               className=" py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -89,7 +89,7 @@ const Dashboard = () => {
         {/* History Section */}
         <div className="mb-6 bg-white p-4 shadow rounded-lg col-span-1 md:col-span-2">
           <h2 className="text-2xl font-bold text-gray-800 mb-5">
-            Payment History
+            Movie History
           </h2>
           <ul className="divide-y divide-gray-200">
             {/* Example History Item */}
@@ -97,15 +97,15 @@ const Dashboard = () => {
               <div className="flex flex-col sm:flex-row justify-between">
                 <div className="mb-2 sm:mb-0">
                   <p className="text-sm font-medium text-indigo-600">
-                    Example Plan
+                    Anything
                   </p>
-                  <p className="text-xs text-gray-500">Example Date</p>
+                  <p className="text-xs text-gray-500">Anything</p>
                 </div>
                 <div className="flex items-center">
                   <p className="text-sm font-semibold text-green-500">
-                    Example Status
+                    Example
                   </p>
-                  <p className="text-sm text-gray-700 ml-4">$Example Amount</p>
+                  <p className="text-sm text-gray-700 ml-4">$Example</p>
                 </div>
               </div>
             </li>

@@ -32,7 +32,7 @@ const BlogPostAIAssistant = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-900 flex justify-center items-center p-6">
       <div className="bg-white rounded-xl shadow-xl overflow-hidden max-w-2xl w-full p-6">
         <h2 className="text-3xl font-extrabold text-gray-800 mb-6 text-center">
-          AI Blog Post Generator
+        MOVIE SUGGESTION APP
         </h2>
 
         {/* Static display for Plan and Credits */}
@@ -66,20 +66,20 @@ const BlogPostAIAssistant = () => {
               htmlFor="tone"
               className="block text-gray-700 text-sm font-semibold mb-2"
             >
-              Select Tone
+              Select Movie
             </label>
             <select
               id="tone"
               {...formik.getFieldProps("tone")}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
-              <option value="">Choose a tone...</option>
-              <option value="formal">Formal</option>
-              <option value="informal">Informal</option>
-              <option value="humorous">Humorous</option>
+              <option value="">Choose a genre...</option>
+              <option value="formal">Action</option>
+              <option value="informal">Comedy</option>
+              <option value="humorous">Horror</option>
             </select>
             {formik.touched.tone && formik.errors.tone && (
-              <div className="text-red-500 mt-1">{formik.errors.tone}</div>
+              <div className="text-red-500 mt-1">{formik.errors.genre}</div>
             )}
           </div>
 
@@ -89,7 +89,7 @@ const BlogPostAIAssistant = () => {
               htmlFor="category"
               className="block text-gray-700 text-sm font-semibold mb-2"
             >
-              Select Category
+              Select Type
             </label>
             <select
               id="category"
@@ -97,9 +97,9 @@ const BlogPostAIAssistant = () => {
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               <option value="">Choose a category...</option>
-              <option value="technology">Technology</option>
-              <option value="health">Health</option>
-              <option value="business">Business</option>
+              <option value="technology">Movie</option>
+              <option value="health">Series</option>
+              <option value="business">Short film</option>
             </select>
             {formik.touched.category && formik.errors.category && (
               <div className="text-red-500 mt-1">{formik.errors.category}</div>

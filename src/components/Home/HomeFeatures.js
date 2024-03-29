@@ -40,10 +40,7 @@ export default function HomeFeatures() {
                           AI-Powered Content Creation
                         </h4>
                         <p className="text-xl text-gray-400">
-                          Masync AI revolutionizes the way you create content.
-                          Our intelligent algorithms generate high-quality,
-                          engaging material, saving you time and enhancing your
-                          creative output.
+                          This app helps you find the best movie, so chill out and enjoy.
                         </p>
                       </div>
                     </div>
@@ -56,10 +53,7 @@ export default function HomeFeatures() {
                           Customizable for Your Needs
                         </h4>
                         <p className="text-xl text-gray-400">
-                          Whether it’s blog posts, marketing copy, or creative
-                          stories, Masync AI tailors content to your specific
-                          needs, ensuring each piece is perfectly suited for its
-                          purpose.
+                          ENJOY YOUR DAY
                         </p>
                       </div>
                     </div>
@@ -72,10 +66,7 @@ export default function HomeFeatures() {
                           Streamline Your Workflow
                         </h4>
                         <p className="text-xl text-gray-400">
-                          Integrating seamlessly with various platforms, Masync
-                          AI becomes a natural extension of your workflow,
-                          making content generation more efficient than ever
-                          before.
+                          With the help of AI, this app will help you find the best movie suitable with your needs.
                         </p>
                       </div>
                     </div>

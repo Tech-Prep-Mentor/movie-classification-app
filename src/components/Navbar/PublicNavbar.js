@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Features", href: "/features" },
-  { name: "Pricing", href: "/plans" },
   { name: "About", href: "/about" },
 ];
 
